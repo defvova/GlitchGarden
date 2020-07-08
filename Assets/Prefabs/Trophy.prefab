@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7206011289859995566}
   - component: {fileID: 7206011289859995565}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7206011290358740023}
   - component: {fileID: 7206011290358740022}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7206011290601580323}
   - component: {fileID: 7206011290601580332}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Trophy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

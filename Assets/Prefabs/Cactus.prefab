@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1413142345}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 7390723431182624667}
   - component: {fileID: 7390723431182624666}
   - component: {fileID: 8799263690052061592}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cactus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,4 +148,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 7901732042887819197, guid: 9c3dcd12468723b4fbf3df955266b7e8, type: 3}
   gun: {fileID: 1413142344}
-  bulletSpeed: 10
