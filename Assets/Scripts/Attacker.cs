@@ -2,7 +2,7 @@
 
 public class Attacker : MonoBehaviour
 {
-    [Range(0f, 2f)] [SerializeField] private float walkSpeed = 1f;
+    private float walkSpeed = 0f;
 
     private void Update()
     {
@@ -12,5 +12,10 @@ public class Attacker : MonoBehaviour
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
+    }
+
+    public void SetMovementSpeed(float speed)
+    {
+        walkSpeed = speed;
     }
 }
