@@ -5,6 +5,7 @@ public class Attacker : MonoBehaviour
 {
     private float walkSpeed = 0f;
     private float health = 1f;
+    [SerializeField] private GameObject deathVFX;
 
     private void Update()
     {
@@ -25,8 +26,16 @@ public class Attacker : MonoBehaviour
 
         if (health <= 0)
         {
+            TriggerDeathVFX();
             Destroy(gameObject);
         }
+    }
+
+    private void TriggerDeathVFX()
+    {
+        if (!deathVFX) return;
+        var newVFX = Instantiate(deathVFX, transform.position, transform.rotation);
+        Destroy(newVFX, 1f);
     }
 
     private void OnBecameInvisible()
