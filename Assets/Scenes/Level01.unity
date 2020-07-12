@@ -524,7 +524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847ec7cbdc5db2458b424bc0593a216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentStars: 100
+  currentStars: 300
 --- !u!1 &1365531557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,7 +1258,7 @@ PrefabInstance:
     - target: {fileID: 5875686138462481654, guid: ea6fb6b4d704a8740860c2f43845dad8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.45654297
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5875686138462481654, guid: ea6fb6b4d704a8740860c2f43845dad8,
         type: 3}

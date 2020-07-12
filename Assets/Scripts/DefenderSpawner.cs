@@ -5,11 +5,17 @@ using UnityEngine;
 public class DefenderSpawner : MonoBehaviour
 {
     private Defender currentDefender;
+    private StarDisplay starDisplay;
+
+    private void Start()
+    {
+        starDisplay = FindObjectOfType<StarDisplay>();
+    }
 
     private void OnMouseUp()
     {
         if (!currentDefender) return;
-        AddDefender(GetSquareClicked());
+        AttemptToPlaceDefender(GetSquareClicked());
     }
 
     public void SetDefender(Defender defender)
@@ -34,5 +40,16 @@ public class DefenderSpawner : MonoBehaviour
     private void AddDefender(Vector2 roundedPosition)
     {
         Instantiate(currentDefender, roundedPosition, transform.rotation);
+    }
+
+    private void AttemptToPlaceDefender(Vector2 roundedPosition)
+    {
+        int amount = currentDefender.GetStarCost();
+
+        if (starDisplay.HaveEnoughStars(amount))
+        {
+            AddDefender(roundedPosition);
+            starDisplay.SpendingStars(amount);
+        }
     }
 }
