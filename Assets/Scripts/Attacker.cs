@@ -5,7 +5,15 @@ public class Attacker : MonoBehaviour
 {
     private float walkSpeed = 0f;
     private float health = 1f;
+    private Animator animator;
+    private GameObject currentTarget;
+
     [SerializeField] private GameObject deathVFX;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -46,5 +54,11 @@ public class Attacker : MonoBehaviour
     public void SetMovementSpeed(float speed)
     {
         walkSpeed = speed;
+    }
+
+    public void Attack(GameObject target)
+    {
+        animator.SetBool("IsAttacking", true);
+        currentTarget = target;
     }
 }
