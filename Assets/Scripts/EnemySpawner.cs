@@ -6,7 +6,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float minTimeSpawner = 1f;
     [SerializeField] private float maxTimeSpawner = 5f;
     [SerializeField] private bool isSpawner = true;
-    [SerializeField] private GameObject enemy;
+    [SerializeField] private Attacker enemy;
 
     private IEnumerator Start()
     {
@@ -19,6 +19,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        Instantiate(enemy, transform.position, transform.rotation);
+        Attacker newAttacker = Instantiate(enemy, transform.position, transform.rotation) as Attacker;
+        newAttacker.transform.parent = transform;
     }
 }

@@ -39,7 +39,8 @@ public class DefenderSpawner : MonoBehaviour
 
     private void AddDefender(Vector2 roundedPosition)
     {
-        Instantiate(currentDefender, roundedPosition, transform.rotation);
+        Defender newDefender = Instantiate(currentDefender, roundedPosition, transform.rotation) as Defender;
+        newDefender.transform.parent = transform;
     }
 
     private void AttemptToPlaceDefender(Vector2 roundedPosition)
