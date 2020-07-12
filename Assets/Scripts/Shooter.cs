@@ -6,8 +6,8 @@ public class Shooter : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
     [SerializeField] private GameObject gun;
-    private Animator animator;
 
+    private Animator animator;
     private EnemySpawner myLaneSpawner;
 
     private void Start()
