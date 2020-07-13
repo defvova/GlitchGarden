@@ -4,11 +4,9 @@ using UnityEngine;
 public class Attacker : MonoBehaviour
 {
     private float walkSpeed = 0f;
-    private float health = 1f;
+
     private Animator animator;
     private GameObject currentTarget;
-
-    [SerializeField] private GameObject deathVFX;
 
     private void Start()
     {
@@ -25,25 +23,10 @@ public class Attacker : MonoBehaviour
         var bullet = collision.gameObject.GetComponent<Bullet>();
         if (!bullet) return;
 
-        ProcessHit(bullet);
-    }
+        Health health = GetComponent<Health>();
+        if (!health) return;
 
-    private void ProcessHit(Bullet bullet)
-    {
-        health -= bullet.GetDamage();
-
-        if (health <= 0)
-        {
-            TriggerDeathVFX();
-            Destroy(gameObject);
-        }
-    }
-
-    private void TriggerDeathVFX()
-    {
-        if (!deathVFX) return;
-        var newVFX = Instantiate(deathVFX, transform.position, transform.rotation);
-        Destroy(newVFX, 1f);
+        health.DealDamage(bullet.GetDamage());
     }
 
     private void OnBecameInvisible()
@@ -60,5 +43,16 @@ public class Attacker : MonoBehaviour
     {
         animator.SetBool("IsAttacking", true);
         currentTarget = target;
+    }
+
+    public void StrikeCurrentTarget(float damage)
+    {
+        if (!currentTarget) return;
+
+        Health health = currentTarget.GetComponent<Health>();
+
+        if (!health) return;
+        health.DealDamage(damage);
+        animator.SetBool("IsAttacking", health.HasHealth());
     }
 }
