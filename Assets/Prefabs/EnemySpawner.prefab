@@ -43,7 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05b1cbae0e4a37408564bb7cb83a395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTimeSpawner: 1
+  minTimeSpawner: 4
   maxTimeSpawner: 5
   isSpawner: 1
-  enemy: {fileID: 6877220644848528341, guid: 9671947cb2e32b2418a04a39bb0dbb7a, type: 3}
+  enemies:
+  - {fileID: 2125157863235561244, guid: 9671947cb2e32b2418a04a39bb0dbb7a, type: 3}
+  - {fileID: 17770042842705535, guid: 767dbe5831d110849a2134aafe450913, type: 3}
