@@ -39,9 +39,9 @@ public class Attacker : MonoBehaviour
         walkSpeed = speed;
     }
 
-    public void Attack(GameObject target)
+    public void Attack(GameObject target, bool isAttacking = true)
     {
-        animator.SetBool("IsAttacking", true);
+        animator.SetBool("IsAttacking", isAttacking);
         currentTarget = target;
     }
 
